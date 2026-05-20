@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Blackjack</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div id="app">
+
+    <div id="felt">
+      <div class="hand-zone">
+        <div class="zone-header">
+          <span class="zone-label">Dealer</span>
+          <span class="score-badge" id="dealer-score">?</span>
+        </div>
+        <div class="cards-wrap" id="dealer-cards"></div>
+      </div>
+
+      <hr class="divider">
+
+      <div class="hand-zone" id="player-zone">
+        <div class="zone-header">
+          <span class="zone-label">You</span>
+          <span class="score-badge" id="player-score">0</span>
+        </div>
+        <div class="cards-wrap" id="player-cards"></div>
+      </div>
+
+      <!-- Split hand (hidden until split) -->
+      <div class="hand-zone hidden" id="split-zone">
+        <div class="zone-header">
+          <span class="zone-label">Split hand</span>
+          <span class="score-badge" id="split-score">0</span>
+        </div>
+        <div class="cards-wrap" id="split-cards"></div>
+      </div>
+
+      <div id="controls">
+        <button id="btn-deal"  onclick="startGame()">Deal</button>
+        <button id="btn-hit"   onclick="hit()"   disabled>Hit</button>
+        <button id="btn-stand" onclick="stand()" disabled>Stand</button>
+        <button id="btn-split" onclick="split()" disabled>Split</button>
+      </div>
+    </div>
+
+    <div id="status-bar"></div>
+
+    <div id="stats-row">
+      <div class="stat-card"><div class="label">Wins</div><div class="value" id="stat-w">0</div></div>
+      <div class="stat-card"><div class="label">Losses</div><div class="value" id="stat-l">0</div></div>
+      <div class="stat-card"><div class="label">Ties</div><div class="value" id="stat-t">0</div></div>
+      <div class="stat-card"><div class="label">Hands</div><div class="value" id="stat-h">0</div></div>
+    </div>
+
+  </div>
+
+  <script src="scripts.js"></script>
+</body>
+</html>
